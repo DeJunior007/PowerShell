@@ -1,0 +1,75 @@
+# Programa 1: Encontrar o maior número entre três
+$num1 = Read-Host "Digite o primeiro numero"
+$num2 = Read-Host "Digite o segundo numero"
+$num3 = Read-Host "Digite o terceiro numero"
+
+$maiorNumero = [Math]::Max([Math]::Max($num1, $num2), $num3)
+
+Write-Host "O maior numero e: $maiorNumero"
+
+# Programa 2: Verificar se um número é positivo ou negativo
+$valor = Read-Host "Digite um valor"
+
+if ($valor -gt 0) {
+    Write-Host "O valor e positivo"
+} elseif ($valor -lt 0) {
+    Write-Host "O valor e negativo"
+} else {
+    Write-Host "O valor e zero"
+}
+
+# Programa 3: Verificar se uma letra é vogal ou consoante
+$letra = Read-Host "Digite uma letra"
+
+if ($letra -match '[aeiouAEIOU]') {
+    Write-Host "A letra e uma vogal"
+} else {
+    Write-Host "A letra e uma consoante"
+}
+
+# Programa 4: Calcular média de notas e verificar status do aluno
+$nota1 = Read-Host "Digite a primeira nota"
+$nota2 = Read-Host "Digite a segunda nota"
+
+$media = ($nota1 + $nota2) / 2
+
+if ($media -eq 10) {
+    Write-Host "Aprovado com Distincao"
+} elseif ($media -ge 7) {
+    Write-Host "Aprovado"
+} else {
+    Write-Host "Reprovado"
+}
+
+# Programa 5: Exibir o dia correspondente da semana
+$numeroDia = Read-Host "Digite um numero de 1 a 7"
+
+switch ($numeroDia) {
+    1 { Write-Host "Domingo" }
+    2 { Write-Host "Segunda-feira" }
+    3 { Write-Host "Terca-feira" }
+    4 { Write-Host "Quarta-feira" }
+    5 { Write-Host "Quinta-feira" }
+    6 { Write-Host "Sexta-feira" }
+    7 { Write-Host "Sabado" }
+    default { Write-Host "Valor invalido" }
+}
+
+# Programa 6: Menu de opções para cálculos
+$numero = Read-Host "Digite um numero"
+
+Write-Host "Escolha uma opcao:"
+Write-Host "101 - Raiz quadrada"
+Write-Host "102 - A metade"
+Write-Host "103 - 10% do numero"
+Write-Host "104 - O dobro"
+
+$opcao = Read-Host "Digite o codigo da opcao desejada"
+
+switch ($opcao) {
+    101 { Write-Host "Raiz quadrada: $($numero | Measure-Object -Minimum).Minimum" }
+    102 { Write-Host "A metade: $($numero / 2)" }
+    103 { Write-Host "10% do numero: $($numero * 0.1)" }
+    104 { Write-Host "O dobro: $($numero * 2)" }
+    default { Write-Host "Opcao invalida" }
+}
